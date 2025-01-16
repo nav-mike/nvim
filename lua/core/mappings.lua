@@ -34,6 +34,7 @@ vim.keymap.set('n', '<leader>gti', ':GoToggleInlay<CR>')
 vim.keymap.set('n', '<leader>gdb', ':GoBreakToggle<CR>')
 vim.keymap.set('n', '<leader>gt', ':GoTestFunc<CR>')
 vim.keymap.set('n', '<leader>go', ':GoRun %<CR>')
+vim.keymap.set('n', '<leader>gd', ':GoDoc<CR>')
 
 -- Python
 
