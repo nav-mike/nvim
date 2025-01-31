@@ -37,3 +37,5 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
+-- Highlight the current line
+vim.opt.cursorline = true

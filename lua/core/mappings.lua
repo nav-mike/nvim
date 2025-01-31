@@ -35,6 +35,7 @@ vim.keymap.set('n', '<leader>gdb', ':GoBreakToggle<CR>')
 vim.keymap.set('n', '<leader>gt', ':GoTestFunc<CR>')
 vim.keymap.set('n', '<leader>go', ':GoRun %<CR>')
 vim.keymap.set('n', '<leader>gd', ':GoDoc<CR>')
+vim.keymap.set('n', '<leader>gfs', ':GoFillStruct<CR>')
 
 -- Python
 
@@ -72,3 +73,16 @@ end
 vim.api.nvim_set_keymap('n', '<leader>cc', ':lua DuplicateRow()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sb', ':lua SelectBuffer()<CR>', { noremap = true, silent = true })
 
+-- Snippets
+local ls = require("luasnip")
+
+vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-E>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, {silent = true})
+--

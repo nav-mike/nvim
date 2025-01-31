@@ -23,6 +23,7 @@ return {
 
 			require('mason').setup({ opts = { ensure_installed = { "prettier" } } })
 			require('mason-lspconfig').setup({
+				-- ensure_installed = { 'gopls', 'golangci_lint_ls', 'graphql', 'ts_ls', 'tailwindcss' },
 				ensure_installed = { 'gopls', 'golangci_lint_ls', 'graphql' },
 				handlers = {
 					function(server_name)
@@ -33,18 +34,25 @@ return {
 
             require('lspconfig').ruff.setup({})
 
-            require('lspconfig').eslint.setup({
-                on_attach = function(client, bufnr)
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        buffer = bufnr,
-                        command = "EslintFixAll",
-                    })
-                end,
-            })
+            -- require('lspconfig').ts_ls.setup({})
 
             local cmp = require('cmp')
 
+            -- local luasnip = require('luasnip')
+
             cmp.setup({
+                -- sources = {
+                --     { name = 'luasnip' }
+                -- },
+                -- snippet = {
+                --     expand = function(args)
+                --         local luasnip = prequire("luasnip")
+                --         if not luasnip then
+                --             return
+                --         end
+                --         luasnip.lsp_expand(args.body)
+                --     end,
+                -- },
                 mapping = {
                     ['<TAB>'] = cmp.mapping.confirm({ select = false })
                 }
