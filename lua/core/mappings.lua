@@ -55,6 +55,10 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=vertical size=100<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>th', ':ToggleTerm direction=horizontal size=10<CR>', { noremap = true, silent = true })
 
+-- Spell checking
+vim.keymap.set("n", "<leader>f11", ":set spell!<CR>", { silent = true })
+-- vim.keymap.set("i", "<F11>", "<C-O>:set spell!<CR>", { silent = true })
+
 -- Macro
 function DuplicateRow()
     vim.cmd('normal! yyp')
@@ -85,4 +89,3 @@ vim.keymap.set({"i", "s"}, "<C-E>", function()
 		ls.change_choice(1)
 	end
 end, {silent = true})
---

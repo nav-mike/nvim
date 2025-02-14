@@ -39,3 +39,10 @@ vim.opt.smartindent = true
 
 -- Highlight the current line
 vim.opt.cursorline = true
+
+-- spell checking
+vim.opt.spelllang = { "en" }
+vim.opt.spellsuggest = { "best", "9" }
+
+-- vertical line for max line size
+vim.opt.colorcolumn = "99"
