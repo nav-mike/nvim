@@ -37,6 +37,7 @@ vim.keymap.set('n', '<leader>go', ':GoRun %<CR>')
 vim.keymap.set('n', '<leader>gd', ':GoDoc<CR>')
 vim.keymap.set('n', '<leader>gfs', ':GoFillStruct<CR>')
 vim.keymap.set('n', '<leader>grn', ':GoRename<CR>')
+vim.keymap.set('n', '<leader>gat', ':GoAddTag<CR>')
 
 -- Python
 
