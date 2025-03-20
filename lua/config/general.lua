@@ -46,3 +46,5 @@ vim.opt.spellsuggest = { "best", "9" }
 
 -- vertical line for max line size
 vim.opt.colorcolumn = "99"
+
+vim.cmd[[colorscheme dracula]]
